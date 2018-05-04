@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Weather App</title>
+    <link rel="stylesheet" href="style.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  
+</head>
+<body id="container">
+    
+          <section class="weather" >
+            <h1>Weather App</h1>
+            <p><span id="city"></span><span id="country"></span></p>
+            <p><span id="temp"></span><span id="temp-unit"></span></p>
+            <p id="weather-condition"></p>
+            <p id="weather-icon">
+                <img id="clear" class="hide" src="pics/clear.png" alt="">
+                <img id="clouds" class="hide" src="pics/clouds.png" alt="">
+                <img id="rain" class="hide" src="pics/rain.png" alt="">
+                <img id="sun-shower" class="hide" src="pics/sun-shower.png" alt="">
+                <img id="snow" class="hide" src="pics/snow.png" alt="">
+                <img id="thunderstom" class="hide" src="pics/thunderstom.png" alt="">
+             </p>
+            <button  id="change-unit">Change to Fahrenheit</button>
+          </section>
+        
+      <script src="script.js"></script>
+</body>
+</html>
