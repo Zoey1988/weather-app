@@ -29,7 +29,7 @@ $( document ).ready(function(){
   });
   
 function getWeather(lat, lon) {
-  var urlString = api + lat + "&" + lon;
+  var urlString = api + lon + "&" + lat;
   $.ajax({
       url: urlString, success: function (result) {
       $("#city").text(result.name + ", ");
@@ -38,10 +38,11 @@ function getWeather(lat, lon) {
       $("#temp").text(currentTempInCelsius + " " + String.fromCharCode(176));
       $("#temp-unit").text(tempUnit);
       $("#weather-condition").text(result.weather[0].main);
-      changeIcon(result.weather[0].main);
+      addIcon(result.weather[0].icon);
     }
   });
 }
+/*
 function changeIcon(weatherIcon){
   var weatherIcon = weatherIcon.toLowerCase();
   switch (weatherIcon) {
@@ -63,11 +64,10 @@ function changeIcon(weatherIcon){
    default:
      $('#clouds').removeClass('hide');
  }
-}
+}*/
 
-function addIcon(weatherIcon) {
-  var weatherIcon = weatherIcon.toLowerCase();
-   $('#' + weatherIcon).removeClass('hide');
-
-}
 });
+function addIcon(weatherIcon) {
+  var icon = document.querySelector('#icon');
+    icon.setAttribute('src',weatherIcon)
+}
